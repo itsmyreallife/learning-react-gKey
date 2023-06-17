@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, memo } from 'react'
 
-export default function Key(props) {
+export default memo(function Key(props) {
   const {
     id,
     value,
@@ -24,4 +24,4 @@ export default function Key(props) {
   return (
     <span className={className}>{value}</span>
   )
-}
+})
