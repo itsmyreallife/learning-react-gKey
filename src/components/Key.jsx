@@ -1,12 +1,11 @@
 import React, { useState, memo, useEffect } from 'react'
 
-export default memo(function Key(props) {
-  const {
-    id,
-    value,
-    start,
-    setNextKey
-  } = props
+export default memo(function Key({
+  id,
+  value,
+  start,
+  setNextKey
+}) {
 
   const [className, setClassName] = useState("p-8 m-2 rounded bg-gray-400")
 
@@ -22,13 +21,16 @@ export default memo(function Key(props) {
 
     }
   }
-  addEventListener('keydown', eFunc)
-  
+
   useEffect(() => {
-    if (!start) {
-      removeEventListener('keydown', eFunc)
+    if (start) {
+      addEventListener('keydown', eFunc);
     }
-  }, [className])
+  
+    return () => {
+      removeEventListener('keydown', eFunc);
+    };
+  }, [start]);
 
   return (
     <span className={className}>{value}</span>
