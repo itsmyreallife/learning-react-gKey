@@ -9,7 +9,7 @@ export default function KeyList() {
   return (
     <>
       {keys.map(key => {
-        return key.id == nextKey ? <Key key={key.id} id={key.id} value={key.key} start={true} /> : <Key key={key.id} id={key.id} value={key.key} start={false} />
+        return key.id == nextKey ? <Key key={key.id} id={key.id} value={key.key} start={true} setNextKey={setNextKey} /> : <Key key={key.id} id={key.id} value={key.key} start={false} setNextKey={setNextKey} />
       })}
     </>
 
