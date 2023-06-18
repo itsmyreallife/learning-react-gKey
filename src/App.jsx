@@ -1,5 +1,5 @@
 import React, { createContext } from "react"
-import '../css/app.css'
+import './css/app.css'
 import KeyList from "./components/KeyList"
 
 export const KeysContext = createContext()
