@@ -1,38 +1,28 @@
-import React, { useState, memo, useEffect } from 'react'
+import React, { useState, memo, useEffect } from "react";
 
-export default memo(function Key({
-  id,
-  value,
-  start,
-  setNextKey
-}) {
+export default memo(function Key({ id, value, start, setNextKey }) {
+  const [className, setClassName] = useState("p-8 m-2 rounded bg-gray-400");
 
-  const [className, setClassName] = useState("p-8 m-2 rounded bg-gray-400")
-
-  const eFunc = e => {
+  const eFunc = (e) => {
     if (start) {
       if (e.key == value) {
-        console.log(e);
-        setClassName("p-8 m-2 rounded bg-green-400")
+        setClassName("p-8 m-2 rounded bg-green-400");
       } else {
-        setClassName("p-8 m-2 rounded bg-red-400")
+        setClassName("p-8 m-2 rounded bg-red-400");
       }
-      setNextKey(id + 1)
-
+      setNextKey(id + 1);
     }
-  }
+  };
 
   useEffect(() => {
     if (start) {
-      addEventListener('keydown', eFunc);
+      addEventListener("keydown", eFunc);
     }
-  
+
     return () => {
-      removeEventListener('keydown', eFunc);
+      removeEventListener("keydown", eFunc);
     };
   }, [start]);
 
-  return (
-    <span className={className}>{value}</span>
-  )
-})
+  return <span className={className}>{value}</span>;
+});
