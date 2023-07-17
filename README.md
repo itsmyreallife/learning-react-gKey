@@ -4,4 +4,4 @@
 
 
 ## Lighthouse result
-[Lighthouse result](https://github.com/itsmyreallife/learning-react-gKey/assets/98640413/7585d73c-c281-4c93-8d72-c2f075cf61b0)
+![Lighthouse result](https://github.com/itsmyreallife/learning-react-gKey/assets/98640413/7585d73c-c281-4c93-8d72-c2f075cf61b0)
